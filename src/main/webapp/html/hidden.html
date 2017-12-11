@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script src="/shiro.demo/js/common/jquery/jquery1.8.3.min.js"></script>
+<script src="/shiro.demo/js/common/jquery/jquery.cookie.js"></script>
+<script src="/shiro.demo/MessengerJS/messenger.js"></script>
+<script>
+    var messenger = new Messenger('hidden', 'BRHID');
+    messenger.listen(function (msg) {
+        alert(msg);
+        $.cookie("BRHID", msg, {path:"/shiro.demo"});
+    });
+    messenger.addTarget(window.parent, 'parent');
+
+</script>
+</body>
+</html>
